@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "Pull latest code"
+git pull origin main
+
+echo "Build Docker image"
+docker build -t myapp:v1 .
+
+echo "Run container"
+docker run -d -p 8080:80 myapp:v1
