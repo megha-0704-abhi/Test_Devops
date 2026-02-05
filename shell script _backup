@@ -1,0 +1,6 @@
+#!/bin/bash
+set -e
+
+mvn clean package
+docker build -t myapp:${BUILD_NUMBER} .
+docker push myrepo/myapp:${BUILD_NUMBER}
